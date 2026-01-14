@@ -53,6 +53,10 @@ Minimal local SOAP server for QuickBooks Web Connector (QBWC) to verify connecti
 - Credentials are checked against `App.config` appSettings. Defaults are `qbwc` / `qbwc`.
 - This MVP only sends read-only QueryRq payloads.
 
+## Troubleshooting
+- `Unable to add FileID` / QBWC1039: set `<IsReadOnly>false</IsReadOnly>` for the first add, run once, then switch back to `true`.
+- If the connector was previously added and removed, regenerate `OwnerID`/`FileID` in the QWC file and re-add it.
+
 ## Next
 - Add incremental sync logic + iterator paging.
 - Parse qbXML into structured rows and upsert to Supabase.
