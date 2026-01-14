@@ -1,0 +1,16 @@
+# Build outputs
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and local state
+src/ConnectorApp/logs/
+src/ConnectorApp/bin/Release/net48/logs/
+src/ConnectorApp/bin/Debug/net48/logs/
+
+# OS junk
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<QBWCXML>
+  <AppName>QB Desktop MVP</AppName>
+  <AppID>QBDesktopMVP</AppID>
+  <AppURL>http://localhost:8000/QBWC</AppURL>
+  <AppDescription>Minimal QBWC connector (read-only).</AppDescription>
+  <AppSupport>http://localhost:8000/QBWC?wsdl</AppSupport>
+  <UserName>qbwc</UserName>
+  <OwnerID>{REPLACE-WITH-OWNER-GUID}</OwnerID>
+  <FileID>{REPLACE-WITH-FILE-GUID}</FileID>
+  <CompanyFile>C:\Path\To\Company.qbw</CompanyFile>
+  <QBType>QBFS</QBType>
+  <IsReadOnly>false</IsReadOnly>
+  <Scheduler>
+    <RunEveryNMinutes>60</RunEveryNMinutes>
+  </Scheduler>
+</QBWCXML>

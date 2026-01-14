@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<QBWCXML>
+  <AppName>QB Desktop MVP</AppName>
+  <AppID>QBDesktopMVP</AppID>
+  <AppURL>http://localhost:8000/QBWC</AppURL>
+  <AppDescription>Minimal QBWC connector (read-only).</AppDescription>
+  <AppSupport>http://localhost:8000/QBWC?wsdl</AppSupport>
+  <UserName>qbwc</UserName>
+  <OwnerID>{1A9E8B6B-7C3E-4E67-AF85-2C5F8B94A2D1}</OwnerID>
+  <FileID>{C3F4D36E-0C5D-4D86-9E6C-8A1DA8E5B7E2}</FileID>
+  <CompanyFile>C:\Users\Public\Documents\Intuit\QuickBooks\Company Files\Evgeni Averkin.qbw</CompanyFile>
+  <QBType>QBFS</QBType>
+  <IsReadOnly>true</IsReadOnly>
+  <Scheduler>
+    <RunEveryNMinutes>60</RunEveryNMinutes>
+  </Scheduler>
+</QBWCXML>
