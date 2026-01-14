@@ -58,5 +58,5 @@ Minimal local SOAP server for QuickBooks Web Connector (QBWC) to verify connecti
 - If the connector was previously added and removed, regenerate `OwnerID`/`FileID` in the QWC file and re-add it.
 
 ## Next
-- Add incremental sync logic + iterator paging.
-- Parse qbXML into structured rows and upsert to Supabase.
+- Wire Supabase upserts for customers, invoices, and line items.
+- Add vendors, accounts, items, and payments.
