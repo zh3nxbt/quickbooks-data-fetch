@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "Last 1 year (2025-01-29 to 2026-01-29)",
+    "notes": "Valk's Machinery - Waterjet cutting services. 74 POs analyzed from last year."
+  },
+
+  "vendor": {
+    "id": "800002F2-1498582191",
+    "name": "Valk's Machinery Ltd.",
+    "email": "valksmachinery@yahoo.ca",
+    "phone": "905-760-9407",
+    "address": {
+      "line1": "Valk's Machinery Ltd.",
+      "line2": "250 Rayette Rd, Unit #2 & 3",
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K 2G6"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "purchase_order",
+    "note": "Usually has formal POs, but always check - may occasionally have verbal orders"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "primary": {
+      "id": "80000042-1592233560",
+      "name": "Subcontractor:Waterjet Cutting",
+      "type": "service_item",
+      "postsToAccount": "Subcontractor",
+      "usage": "Use for ALL Valk's transactions - this is their primary and only service"
+    },
+    "alternatives": []
+  },
+
+  "purchaseOrderPattern": {
+    "description": "How POs are created for Valk's Machinery (based on 74 recent POs)",
+    "item": {
+      "id": "80000042-1592233560",
+      "name": "Subcontractor:Waterjet Cutting"
+    },
+    "notes": [
+      "Always use Subcontractor:Waterjet Cutting item",
+      "Description field contains part number (e.g., '45170-0390-15_01')",
+      "HST On Purchase line is auto-added for tax",
+      "Multiple line items if multiple parts",
+      "otherCustomField1 may contain employee name (e.g., 'Ilan')"
+    ],
+    "template": {
+      "vendor": { "id": "800002F2-1498582191" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "PO_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "salesTaxCode": { "id": "90000-1284388831" },
+      "lines": [
+        {
+          "item": { "id": "80000042-1592233560" },
+          "description": "Part number here",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    },
+    "recentExamples": [
+      {
+        "refNumber": "1046",
+        "date": "2026-01-23",
+        "description": "45170-0390-15_01",
+        "quantity": 2,
+        "rate": "45.00",
+        "total": "101.70"
+      },
+      {
+        "refNumber": "1048",
+        "date": "2026-01-23",
+        "description": "PhotoEye",
+        "quantity": 1,
+        "rate": "50.00",
+        "total": "56.50"
+      },
+      {
+        "refNumber": "1038",
+        "date": "2026-01-13",
+        "description": "Material Aluminum 0.375\" Back Spacer",
+        "quantity": 24,
+        "rate": "12.00",
+        "total": "325.44"
+      }
+    ]
+  },
+
+  "billPattern": {
+    "description": "How to convert PO to Bill for Valk's",
+    "notes": [
+      "Use itemLines (not expenseLines) with the same service item as PO",
+      "Reference the vendor invoice number in refNumber field",
+      "Copy line items from PO, verify quantities and amounts match invoice"
+    ],
+    "template": {
+      "vendor": { "id": "800002F2-1498582191" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "itemLines": [
+        {
+          "item": { "id": "80000042-1592233560" },
+          "description": "Part number from PO/invoice",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    }
+  },
+
+  "warnings": [
+    "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only",
+    "Always use 'Subcontractor:Waterjet Cutting' for this vendor",
+    "Balance as of last check: $641.84",
+    "No bills entered in last year - POs may need to be converted"
+  ]
+}

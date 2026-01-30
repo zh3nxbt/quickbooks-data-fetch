@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.conductor.is)",
+      "Bash(npm install)",
+      "Bash(node:*)",
+      "Bash(npm show:*)",
+      "WebFetch(domain:www.npmjs.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(dir:*)",
+      "Bash(curl:*)",
+      "Bash(npm remove:*)",
+      "Bash(del \"C:\\\\Users\\\\evgen\\\\Desktop\\\\Coding\\\\quickbooks-data\\\\check-api.js\")",
+      "Bash(npm install:*)",
+      "Bash(npx:*)",
+      "Bash(set:*)",
+      "WebFetch(domain:developer.intuit.com)",
+      "WebSearch",
+      "Bash(move \"C:\\\\Users\\\\evgen\\\\Desktop\\\\Coding\\\\quickbooks-data\\\\data\\\\Invoice_1451_from_TNT_TOOLS_2025_INC.pdf\" \"C:\\\\Users\\\\evgen\\\\Desktop\\\\Coding\\\\quickbooks-data\\\\data\\\\posted\"\")",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

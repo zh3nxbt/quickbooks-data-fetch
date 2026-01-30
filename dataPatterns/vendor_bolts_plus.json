@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "QuickBooks vendor record + invoice analysis",
+    "notes": "Bolts Plus Inc. - Hardware supplies (fasteners, bolts, screws, nuts)"
+  },
+
+  "vendor": {
+    "id": "800002EF-1496251884",
+    "name": "Bolts Plus Inc.",
+    "companyName": "Bolts Plus Inc.",
+    "email": "purchasing@boltsplus.ca",
+    "phone": "905-857-4492",
+    "hstNumber": "864035001RT0001",
+    "address": {
+      "line1": "Bolts Plus Inc.",
+      "line2": "8800 George Bolton Pkwy",
+      "city": "Bolton",
+      "state": "ON",
+      "postalCode": "L7E 2Y4"
+    },
+    "locations": {
+      "northYork": "5533 Steeles Ave. W., Units #1-6, North York ON M9L1S7"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "verbal",
+    "note": "Usually verbal orders with employee name as reference (e.g., 'Ilan'), but always check for PO"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "_note": "Read description to determine correct item - usually Fastener, but can be Tools or Raw Material",
+    "primary": {
+      "id": "80000049-1592400071",
+      "name": "Components:Fastener",
+      "type": "service_item",
+      "postsToAccount": "Components",
+      "usage": "Fasteners, bolts, screws, nuts, socket caps, washers - MOST COMMON"
+    },
+    "alternatives": [
+      {
+        "id": "80000066-1715615671",
+        "name": "Tools & Equipment",
+        "usage": "Tools, drill bits, taps, dies, measuring equipment"
+      },
+      {
+        "id": "8000003D-1587408478",
+        "name": "Raw Materials",
+        "usage": "Raw stock, metal bars, plates, sheets"
+      },
+      {
+        "id": "80000055-1593447707",
+        "name": "Components:General Material",
+        "usage": "General components that don't fit other categories"
+      }
+    ]
+  },
+
+  "billPattern": {
+    "description": "How bills are typically structured for Bolts Plus",
+    "preferredMethod": "itemLines",
+    "notes": [
+      "READ DESCRIPTION to determine correct item:",
+      "  - Bolts, screws, nuts, washers, socket caps → Components:Fastener (most common)",
+      "  - Drill bits, taps, dies, tools → Tools & Equipment",
+      "  - Metal stock, bars, plates → Raw Materials",
+      "Description includes part number and full description (e.g., '1/4-20 X 2-1/2 SOCKET CAP 18.8 STAINLESS')",
+      "PO# field often contains employee name (e.g., 'Ilan') rather than formal PO number",
+      "Always use NET 30 EOM terms"
+    ],
+    "template": {
+      "vendor": { "id": "800002EF-1496251884" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "itemLines": [
+        {
+          "item": { "id": "80000049-1592400071" },
+          "description": "Part# - Hardware description",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    }
+  },
+
+  "purchaseOrderPattern": {
+    "description": "Orders often verbal with employee name as reference",
+    "notes": [
+      "PO# field typically contains employee name who placed order",
+      "If formal PO needed, use Subcontractor item"
+    ]
+  },
+
+  "warnings": [
+    "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only",
+    "DO NOT use 'Subcontractor' items - choose from Fastener/Tools/Raw Materials based on description",
+    "MUST read line item description to select correct item (Fastener vs Tools vs Raw Material)",
+    "PO# on their invoices is often an employee name, not a formal PO number"
+  ]
+}

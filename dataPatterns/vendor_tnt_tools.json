@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "New vendor - first invoice",
+    "notes": "T.N.T. Tools Inc. - Tool sharpening and recoating services"
+  },
+
+  "vendor": {
+    "id": "800004F4-1769709119",
+    "name": "T.N.T. Tools Inc.",
+    "companyName": "T.N.T. TOOLS 2025 INC.",
+    "email": "t.n.t.toolsinc@gmail.com",
+    "phone": "416-398-9446",
+    "website": "www.tnt-toolsinc.com",
+    "hstNumber": "766793368",
+    "address": {
+      "line1": "T.N.T. TOOLS 2025 INC.",
+      "line2": "150 Jardin Drive, Unit #4",
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K-3P9"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "verbal",
+    "note": "Usually verbal/phone orders, but always check for PO before creating bill"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "primary": {
+      "id": "80000050-1593098471",
+      "name": "Subcontractor:General Machining",
+      "type": "service_item",
+      "postsToAccount": "Subcontractor",
+      "usage": "Tool sharpening and recoating services"
+    },
+    "alternatives": []
+  },
+
+  "billPattern": {
+    "description": "How bills are typically structured for T.N.T. Tools",
+    "preferredMethod": "itemLines",
+    "notes": [
+      "Use Subcontractor:General Machining for sharpening/recoating services",
+      "Description includes tool type and service (e.g., '12mm E/M S/CARBIDE - Sharpen & Recoat')",
+      "PO number is usually VERBAL (no formal PO)",
+      "Always use NET 30 EOM terms (ignore their Net 30)"
+    ],
+    "template": {
+      "vendor": { "id": "800004F4-1769709119" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "itemLines": [
+        {
+          "item": { "id": "80000050-1593098471" },
+          "description": "Tool description - service performed",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    },
+    "exampleFromHistory": {
+      "invoice": "1451",
+      "date": "2026-01-27",
+      "lines": [
+        { "qty": 8, "desc": "12mm E/M S/CARBIDE LONG 4 FLUTE - Sharpen complete & recoat", "rate": "27.00" },
+        { "qty": 7, "desc": "1/2\" E/M S/CARBIDE LONG 4 FLUTE - Sharpen to 12mm & recoat", "rate": "27.00" }
+      ],
+      "subtotal": "405.00",
+      "hst": "52.65",
+      "total": "457.65"
+    }
+  },
+
+  "purchaseOrderPattern": {
+    "description": "POs are usually VERBAL - no formal PO created",
+    "notes": [
+      "Most orders are verbal/phone orders",
+      "If PO needed, use same item as bills (Subcontractor:General Machining)"
+    ]
+  },
+
+  "warnings": [
+    "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only",
+    "Always use 'Subcontractor:General Machining' for this vendor",
+    "Ignore their 'Net 30' terms - use NET 30 EOM per business rules"
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-01-29T18:42:24.458Z",
+  "action": "create",
+  "entity": "credit_card_charges",
+  "endpoint": "POST /quickbooks-desktop/credit-card-charges",
+  "request": {
+    "accountId": "800000AC-1492352573",
+    "payeeId": "800002F8-1501163027",
+    "transactionDate": "2026-01-28",
+    "refNumber": "58856924",
+    "itemLines": [
+      {
+        "itemId": "80000049-1592400071",
+        "description": "92605A111 - SS Flat-Tip Set Screw 18-8, M4 x 0.7, 5mm Long, Pk of 25",
+        "quantity": 8,
+        "amount": "4.68",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000055-1593447707",
+        "description": "9452K128 - Oil-Resistant Buna-N O-Ring, 1/16 Width, Dash 040, Pk of 100",
+        "quantity": 1,
+        "amount": "17.45",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000055-1593447707",
+        "description": "9452K357 - Oil-Resistant Buna-N O-Ring, 1/8 Width, Dash 256, Pk of 10",
+        "quantity": 1,
+        "amount": "9.69",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000065-1715614932",
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "amount": "19.21",
+        "salesTaxCodeId": "90000-1284388831"
+      }
+    ]
+  },
+  "response": {
+    "id": "3BCD8-1769712143",
+    "objectType": "qbd_credit_card_charge",
+    "createdAt": "2026-01-29T13:42:23-05:00",
+    "updatedAt": "2026-01-29T13:42:23-05:00",
+    "revisionNumber": "1769712143",
+    "account": {
+      "id": "800000AC-1492352573",
+      "fullName": "TD VISA #5625"
+    },
+    "payee": {
+      "id": "800002F8-1501163027",
+      "fullName": "McMaster-Carr"
+    },
+    "transactionDate": "2026-01-28",
+    "amount": "57.66",
+    "currency": null,
+    "exchangeRate": null,
+    "amountInHomeCurrency": null,
+    "refNumber": "58856924",
+    "memo": null,
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "fullName": "H"
+    },
+    "externalId": null,
+    "expenseLines": [],
+    "itemLines": [
+      {
+        "id": "3BCDA-1769712143",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000049-1592400071",
+          "fullName": "Components:Fastener"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "92605A111 - SS Flat-Tip Set Screw 18-8, M4 x 0.7, 5mm Long, Pk of 25",
+        "quantity": 8,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "0.585",
+        "amount": "4.68",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCDB-1769712143",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000055-1593447707",
+          "fullName": "Components:General Material"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "9452K128 - Oil-Resistant Buna-N O-Ring, 1/16 Width, Dash 040, Pk of 100",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "17.45",
+        "amount": "17.45",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCDC-1769712143",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000055-1593447707",
+          "fullName": "Components:General Material"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "9452K357 - Oil-Resistant Buna-N O-Ring, 1/8 Width, Dash 256, Pk of 10",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "9.69",
+        "amount": "9.69",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCDD-1769712143",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000065-1715614932",
+          "fullName": "Shipping & Delivery"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "19.21",
+        "amount": "19.21",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      }
+    ],
+    "itemGroupLines": [],
+    "customFields": []
+  },
+  "status": "success",
+  "refNumber": "58856924",
+  "linkedEntities": []
+}

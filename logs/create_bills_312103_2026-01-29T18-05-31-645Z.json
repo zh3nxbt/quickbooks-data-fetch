@@ -1,0 +1,119 @@
+{
+  "timestamp": "2026-01-29T18:05:31.645Z",
+  "action": "create",
+  "entity": "bills",
+  "endpoint": "POST /quickbooks-desktop/bills",
+  "request": {
+    "vendorId": "800002F2-1498582191",
+    "transactionDate": "2026-01-28",
+    "refNumber": "312103",
+    "termsId": "80000008-1592232388",
+    "linkToTransactionIds": [
+      "3B7AE-1769177338"
+    ]
+  },
+  "response": {
+    "id": "3BC3C-1769709930",
+    "objectType": "qbd_bill",
+    "createdAt": "2026-01-29T13:05:30-05:00",
+    "updatedAt": "2026-01-29T13:05:30-05:00",
+    "revisionNumber": "1769709930",
+    "vendor": {
+      "id": "800002F2-1498582191",
+      "fullName": "Valk's Machinery Ltd."
+    },
+    "vendorAddress": {
+      "line1": "Valk's Machinery Ltd.",
+      "line2": "250 Rayette Rd, Unit #2 & 3",
+      "line3": null,
+      "line4": null,
+      "line5": null,
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K 2G6",
+      "country": null,
+      "note": null
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "fullName": "Accounts Payable"
+    },
+    "transactionDate": "2026-01-28",
+    "dueDate": "2026-02-28",
+    "amountDue": "101.70",
+    "currency": null,
+    "exchangeRate": null,
+    "amountDueInHomeCurrency": null,
+    "refNumber": "312103",
+    "isPending": null,
+    "terms": {
+      "id": "80000008-1592232388",
+      "fullName": "NET 30 EOM"
+    },
+    "memo": null,
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "fullName": "H"
+    },
+    "isPaid": false,
+    "externalId": null,
+    "linkedTransactions": [
+      {
+        "id": "3B7AE-1769177338",
+        "objectType": "qbd_linked_transaction",
+        "transactionType": "purchase_order",
+        "transactionDate": "2026-01-23",
+        "refNumber": "1046",
+        "linkType": "quantity",
+        "amount": "0.00"
+      }
+    ],
+    "expenseLines": [],
+    "itemLines": [
+      {
+        "id": "3BC3E-1769709930",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000042-1592233560",
+          "fullName": "Subcontractor:Waterjet Cutting"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "45170-0390-15_01",
+        "quantity": 2,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "45.00",
+        "amount": "90.00",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      }
+    ],
+    "itemGroupLines": [],
+    "openAmount": "913.04",
+    "customFields": []
+  },
+  "status": "success",
+  "refNumber": "312103",
+  "linkedEntities": [
+    {
+      "type": "linked_transaction",
+      "id": "3B7AE-1769177338"
+    },
+    {
+      "type": "purchase_order",
+      "id": "3B7AE-1769177338",
+      "refNumber": "1046"
+    }
+  ]
+}

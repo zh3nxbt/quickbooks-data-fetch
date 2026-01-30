@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "QuickBooks vendor record + invoice analysis",
+    "notes": "McMaster-Carr Supply Company - Industrial supplies, raw materials, fasteners (USD invoices)"
+  },
+
+  "vendor": {
+    "id": "800002F8-1501163027",
+    "name": "McMaster-Carr",
+    "companyName": "McMaster-Carr Supply Company",
+    "email": "cle.sales@mcmaster.com",
+    "phone": "330-995-5500",
+    "fax": "330-995-9600",
+    "hstNumber": "131203705RT0004",
+    "address": {
+      "note": "US-based supplier, ships to Canada"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "online",
+    "note": "Orders placed online, PO# format is MMDDVAVERKIN (date + employee initials)"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario - included in USD invoice, recalculated for CAD"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "currency": {
+    "invoiceCurrency": "USD",
+    "bookCurrency": "CAD",
+    "IMPORTANT": "ASK USER for CAD amounts - invoices show USD only, need actual credit card charge in CAD",
+    "conversionMethod": "Calculate exchange rate: CAD_charged / USD_total, then apply to each line item",
+    "note": "Each invoice may have different exchange rate based on payment date",
+    "example": {
+      "usdInvoiceTotal": 142.91,
+      "cadChargedToCard": 202.82,
+      "exchangeRate": 1.4193
+    }
+  },
+
+  "commonItems": {
+    "_note": "READ DESCRIPTION to select correct item - match material type to sub-item",
+    "shipping": {
+      "id": "80000065-1715614932",
+      "name": "Shipping & Delivery",
+      "usage": "ALL shipping charges go here"
+    },
+    "rawMaterials": {
+      "_comment": "Use specific sub-item when material matches",
+      "parent": { "id": "8000003D-1587408478", "name": "Raw Materials" },
+      "aluminum6061": { "id": "80000051-1593099472", "name": "Raw Materials:Aluminum Alloy - 6061", "keywords": ["aluminum", "6061"] },
+      "aluminumBronze": { "id": "80000056-1594324472", "name": "Raw Materials:Aluminum Bronze - C95400", "keywords": ["bronze", "c95400"] },
+      "carbonSteel": { "id": "80000041-1587408848", "name": "Raw Materials:Carbon Steel - 4140PH", "keywords": ["carbon steel", "1045", "4140"] },
+      "plastic": { "id": "80000067-1715618110", "name": "Raw Materials:Plastic - Delrin, UHMW", "keywords": ["delrin", "acetal", "nylon", "abs", "uhmw", "plastic"] },
+      "stainlessSteel": { "id": "8000006A-1723556108", "name": "Raw Materials:Stainless Steel - 304, 316", "keywords": ["stainless", "304", "316", "18-8"] },
+      "toolSteelA2": { "id": "80000040-1587408839", "name": "Raw Materials:Tool Steel - A2", "keywords": ["a2 steel", "a-2"] },
+      "toolSteelD2": { "id": "8000003F-1587408813", "name": "Raw Materials:Tool Steel - D2", "keywords": ["d2 steel", "d-2"] },
+      "toolSteelM2": { "id": "8000004D-1593017168", "name": "Raw Materials:Tool Steel - M2", "keywords": ["m2 steel", "m-2"] },
+      "toolSteelM4": { "id": "8000003E-1587408510", "name": "Raw Materials:Tool Steel - M4", "keywords": ["m4 steel", "m-4"] },
+      "toolSteelS7": { "id": "8000004C-1593016961", "name": "Raw Materials:Tool Steel - S7", "keywords": ["s7 steel", "s-7"] }
+    },
+    "components": {
+      "fastener": { "id": "80000049-1592400071", "name": "Components:Fastener", "keywords": ["screw", "bolt", "nut", "pin", "insert", "washer"] },
+      "generalMaterial": { "id": "80000055-1593447707", "name": "Components:General Material", "keywords": ["o-ring", "seal", "gasket", "misc"] }
+    }
+  },
+
+  "transactionType": {
+    "type": "credit_card_charge",
+    "reason": "McMaster-Carr is paid by credit card at time of order, not invoiced",
+    "endpoint": "POST /quickbooks-desktop/credit-card-charges"
+  },
+
+  "creditCardChargePattern": {
+    "description": "Credit Card Charge for McMaster-Carr (USD to CAD conversion)",
+    "preferredMethod": "itemLines",
+    "notes": [
+      "*** ASK USER FOR CAD AMOUNT *** - Invoice only shows USD, need actual CAD charged to card",
+      "USE CREDIT CARD CHARGE - not Bill (paid at time of order)",
+      "Calculate exchange rate: CAD_charged / USD_invoice_total",
+      "Apply exchange rate to each LINE TOTAL (not per-unit) AND shipping",
+      "Use qty=1 for all lines, put converted LINE TOTAL in amount field",
+      "ITEM SELECTION: Match material to specific Raw Materials sub-item:",
+      "  - Nylon/ABS/Delrin/Acetal/Plastic → Raw Materials:Plastic - Delrin, UHMW",
+      "  - Carbon Steel/1045/4140 → Raw Materials:Carbon Steel - 4140PH",
+      "  - Stainless/18-8/304/316 → Raw Materials:Stainless Steel - 304, 316",
+      "  - Aluminum/6061 → Raw Materials:Aluminum Alloy - 6061",
+      "  - Tool Steel A2/D2/M2/M4/S7 → corresponding Raw Materials:Tool Steel sub-item",
+      "  - Screws/pins/inserts/bolts → Components:Fastener",
+      "  - O-rings/seals/gaskets → Components:General Material",
+      "SHIPPING: Always use 'Shipping & Delivery' item (80000065-1715614932)"
+    ],
+    "conversionExample": {
+      "usdTotal": 142.91,
+      "cadCharged": 202.82,
+      "exchangeRate": 1.4193,
+      "lineItemUSD": 35.76,
+      "lineItemCAD": 50.75
+    },
+    "template": {
+      "account": { "id": "CREDIT_CARD_ACCOUNT_ID" },
+      "payee": { "id": "800002F8-1501163027" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "INVOICE_NUMBER",
+      "itemLines": [
+        {
+          "item": { "id": "SELECTED_ITEM_ID" },
+          "description": "Part# - Description (converted from USD)",
+          "quantity": 1,
+          "amount": "CAD_AMOUNT",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        },
+        {
+          "item": { "id": "80000065-1715614932" },
+          "description": "Shipping (Purolator)",
+          "quantity": 1,
+          "amount": "SHIPPING_CAD",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    }
+  },
+
+  "warnings": [
+    "INVOICES ARE IN USD - ASK USER for CAD amount charged to credit card (not shown on invoice)",
+    "Cannot process without CAD amount - must request from user if not provided",
+    "Exchange rate varies per invoice - calculate for each one using: CAD / USD",
+    "Use CREDIT CARD CHARGE transaction type - NOT Bill (paid at time of order)",
+    "Line item 'amount' field is LINE TOTAL - not per-unit (use qty=1, put total in amount)",
+    "Shipping goes under 'Shipping & Delivery' item - always taxable with HST",
+    "Match materials to specific Raw Materials sub-items (Plastic, Carbon Steel, Stainless, etc.)"
+  ]
+}

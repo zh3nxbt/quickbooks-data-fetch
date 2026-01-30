@@ -1,0 +1,224 @@
+{
+  "timestamp": "2026-01-29T18:42:21.412Z",
+  "action": "create",
+  "entity": "credit_card_charges",
+  "endpoint": "POST /quickbooks-desktop/credit-card-charges",
+  "request": {
+    "accountId": "800000AC-1492352573",
+    "payeeId": "800002F8-1501163027",
+    "transactionDate": "2026-01-21",
+    "refNumber": "58473057",
+    "itemLines": [
+      {
+        "itemId": "80000067-1715618110",
+        "description": "8538K33 - Wear-Rst Off-White Nylon Rod 2-1/4\" Dia, 1 ft",
+        "quantity": 1,
+        "amount": "50.75",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000067-1715618110",
+        "description": "8587K3 - Impact-Resistant ABS Rod, 1/2\" Dia, 5 ft",
+        "quantity": 1,
+        "amount": "20.45",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000067-1715618110",
+        "description": "8572K58 - White Delrin Acetal Resin Rod, 3/4\" Dia, 5 ft",
+        "quantity": 1,
+        "amount": "28.54",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000041-1587408848",
+        "description": "5615N13 - High-Strength 1045 Carbon Steel Rod, 10mm Dia, 3 ft",
+        "quantity": 1,
+        "amount": "27.77",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000065-1715614932",
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "amount": "51.97",
+        "salesTaxCodeId": "90000-1284388831"
+      }
+    ]
+  },
+  "response": {
+    "id": "3BCC7-1769712140",
+    "objectType": "qbd_credit_card_charge",
+    "createdAt": "2026-01-29T13:42:20-05:00",
+    "updatedAt": "2026-01-29T13:42:20-05:00",
+    "revisionNumber": "1769712140",
+    "account": {
+      "id": "800000AC-1492352573",
+      "fullName": "TD VISA #5625"
+    },
+    "payee": {
+      "id": "800002F8-1501163027",
+      "fullName": "McMaster-Carr"
+    },
+    "transactionDate": "2026-01-21",
+    "amount": "202.81",
+    "currency": null,
+    "exchangeRate": null,
+    "amountInHomeCurrency": null,
+    "refNumber": "58473057",
+    "memo": null,
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "fullName": "H"
+    },
+    "externalId": null,
+    "expenseLines": [],
+    "itemLines": [
+      {
+        "id": "3BCC9-1769712140",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000067-1715618110",
+          "fullName": "Raw Materials:Plastic - Delrin, UHMW"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "8538K33 - Wear-Rst Off-White Nylon Rod 2-1/4\" Dia, 1 ft",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "50.75",
+        "amount": "50.75",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCCA-1769712140",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000067-1715618110",
+          "fullName": "Raw Materials:Plastic - Delrin, UHMW"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "8587K3 - Impact-Resistant ABS Rod, 1/2\" Dia, 5 ft",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "20.45",
+        "amount": "20.45",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCCB-1769712140",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000067-1715618110",
+          "fullName": "Raw Materials:Plastic - Delrin, UHMW"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "8572K58 - White Delrin Acetal Resin Rod, 3/4\" Dia, 5 ft",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "28.54",
+        "amount": "28.54",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCCC-1769712140",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000041-1587408848",
+          "fullName": "Raw Materials:Carbon Steel - 4140PH"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "5615N13 - High-Strength 1045 Carbon Steel Rod, 10mm Dia, 3 ft",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "27.77",
+        "amount": "27.77",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCCD-1769712140",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000065-1715614932",
+          "fullName": "Shipping & Delivery"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "51.97",
+        "amount": "51.97",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      }
+    ],
+    "itemGroupLines": [],
+    "customFields": []
+  },
+  "status": "success",
+  "refNumber": "58473057",
+  "linkedEntities": []
+}

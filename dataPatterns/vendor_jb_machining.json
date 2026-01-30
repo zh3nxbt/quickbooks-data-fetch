@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "QuickBooks vendor record + invoice analysis",
+    "notes": "J & B Machining Services Inc. - General machining services (parts manufacturing)"
+  },
+
+  "vendor": {
+    "id": "17C0000-1108052518",
+    "name": "J & B Machining Services Inc.",
+    "companyName": "J & B Machining Services Inc.",
+    "email": "salesjbmachining@gmail.com",
+    "phone": "647-510-7612",
+    "hstNumber": "876753906",
+    "address": {
+      "line1": "J & B Machining Services Inc.",
+      "line2": "6184A Kestrel Road",
+      "city": "Mississauga",
+      "state": "ON",
+      "postalCode": "L5T 1Z2"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "verbal",
+    "note": "Usually verbal orders, but always check for PO before creating bill"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "primary": {
+      "id": "80000050-1593098471",
+      "name": "Subcontractor:General Machining",
+      "type": "service_item",
+      "postsToAccount": "Subcontractor",
+      "usage": "General machining/parts manufacturing services"
+    },
+    "alternatives": []
+  },
+
+  "billPattern": {
+    "description": "How bills are typically structured for J&B Machining",
+    "preferredMethod": "itemLines",
+    "notes": [
+      "Use Subcontractor:General Machining for parts manufacturing",
+      "Description includes part name (e.g., 'Arbor Nose', 'Rollen Welle')",
+      "Usually verbal orders - no formal PO",
+      "Always use NET 30 EOM terms (ignore their Net 30)"
+    ],
+    "template": {
+      "vendor": { "id": "17C0000-1108052518" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "itemLines": [
+        {
+          "item": { "id": "80000050-1593098471" },
+          "description": "Part description",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    }
+  },
+
+  "purchaseOrderPattern": {
+    "description": "POs are usually VERBAL - no formal PO created",
+    "notes": [
+      "Most orders are verbal/phone orders",
+      "If PO needed, use Subcontractor:General Machining"
+    ]
+  },
+
+  "warnings": [
+    "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only",
+    "Always use 'Subcontractor:General Machining' for this vendor",
+    "Ignore their 'Net 30' terms - use NET 30 EOM per business rules"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "_meta": {
+    "description": "Business rules for QuickBooks data entry - MAS Precision Parts",
+    "lastUpdated": "2026-01-29",
+    "usage": "LLM should check these rules BEFORE creating any transactions"
+  },
+
+  "universal": {
+    "paymentTerms": {
+      "rule": "Always use NET 30 EOM for all vendors and customers",
+      "termId": "80000008-1592232388",
+      "termName": "NET 30 EOM",
+      "note": "Ignore payment terms shown on vendor invoices - our business rule overrides"
+    },
+    "taxCode": {
+      "rule": "Use HST (H) for all Ontario transactions",
+      "taxCodeId": "90000-1284388831",
+      "rate": "13%",
+      "note": "Verify tax code for out-of-province vendors"
+    },
+    "dataSource": {
+      "rule": "Always use data from the last 1 year as reference patterns",
+      "note": "Older data may have incorrect items or outdated practices"
+    }
+  },
+
+  "vendors": {
+    "billCreation": {
+      "vendorPatternRequired": {
+        "rule": "A vendor dataPattern file MUST exist before creating any bill",
+        "method": "conductor-client.js auto-checks for vendor_*.json with matching vendor ID",
+        "behavior": "Throws NO_VENDOR_PATTERN error if no pattern file found",
+        "createPattern": "Use _template_vendor.json as starting point, fetch vendor data from QuickBooks",
+        "benefit": "Ensures consistent data entry using documented patterns for each vendor"
+      },
+      "linkToPurchaseOrder": {
+        "rule": "When an ACTIVE PO exists for the vendor invoice, ALWAYS link the bill to the PO",
+        "activePO": "Active = isFullyReceived:false AND isManuallyClosed:false",
+        "method": "Use findActivePO(vendorId, poNumber) or getActivePOs(vendorId) to search",
+        "behavior": "QuickBooks auto-populates bill line items from the linked PO",
+        "benefit": "Eliminates manual data entry, ensures accuracy, maintains PO-Bill relationship",
+        "constraint": "PO links can ONLY be added during bill creation, NOT during updates",
+        "apiField": "linkToTransactionIds",
+        "apiFieldType": "array of transaction IDs (GUID format)"
+      },
+      "withoutPurchaseOrder": {
+        "rule": "If no PO exists, create bill with itemLines manually",
+        "method": "Use appropriate service item (e.g., Subcontractor:Waterjet Cutting)",
+        "note": "Match service item to the type of work performed"
+      },
+      "refNumber": {
+        "rule": "Use the vendor's invoice number as the bill refNumber",
+        "note": "This allows easy cross-reference with vendor records"
+      },
+      "duplicateCheck": {
+        "rule": "ALWAYS check if bill already exists before creating",
+        "method": "Search bills by refNumber + vendorId combination",
+        "behavior": "conductor-client.js auto-checks before createBill() unless skipDuplicateCheck=true",
+        "errorCode": "DUPLICATE_BILL",
+        "note": "Prevents accidental duplicate data entry"
+      },
+      "transactionDate": {
+        "rule": "Use the vendor invoice date as the bill transactionDate",
+        "note": "Not the date of data entry"
+      }
+    },
+    "purchaseOrderCreation": {
+      "itemSelection": {
+        "rule": "Use the appropriate Subcontractor service item for the type of work",
+        "note": "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only"
+      },
+      "description": {
+        "rule": "Put part numbers or job references in the description field",
+        "examples": ["45170-0390-15_01", "PhotoEye", "Dough Cutter Rough"]
+      }
+    },
+    "vendorMatching": {
+      "rule": "Match vendor by name or ID before creating transactions",
+      "method": "Use getVendorListForMatching() to fetch all vendors, then LLM fuzzy matches",
+      "fuzzyMatch": "LLM handles variations like 'TNT Tools' vs 'T.N.T. TOOLS 2025 INC.'",
+      "newVendor": "If no match found, vendor must be created in QuickBooks FIRST by user",
+      "note": "Never assume vendor exists - always verify against QuickBooks vendor list"
+    }
+  },
+
+  "customers": {
+    "invoiceCreation": {
+      "itemSelection": {
+        "rule": "Use 'Job Type:Manufacturing Job' for customer invoices",
+        "note": "This is the standard item for billing manufacturing work to customers"
+      },
+      "refNumber": {
+        "rule": "Follow company invoice numbering sequence",
+        "note": "Check last invoice number before creating new one"
+      }
+    },
+    "salesOrderCreation": {
+      "note": "Document patterns when customer data is analyzed"
+    }
+  },
+
+  "apiPatterns": {
+    "billCreationWithPO": {
+      "endpoint": "POST /quickbooks-desktop/bills",
+      "minimalPayload": {
+        "vendorId": "VENDOR_ID",
+        "transactionDate": "YYYY-MM-DD",
+        "refNumber": "VENDOR_INVOICE_NUMBER",
+        "termsId": "80000008-1592232388",
+        "linkToTransactionIds": ["PO_TRANSACTION_ID"]
+      },
+      "note": "When linking to PO, itemLines are auto-populated - don't specify manually"
+    },
+    "billCreationWithoutPO": {
+      "endpoint": "POST /quickbooks-desktop/bills",
+      "requiredFields": ["vendorId", "transactionDate", "itemLines OR expenseLines"],
+      "payload": {
+        "vendorId": "VENDOR_ID",
+        "transactionDate": "YYYY-MM-DD",
+        "refNumber": "VENDOR_INVOICE_NUMBER",
+        "termsId": "80000008-1592232388",
+        "itemLines": [
+          {
+            "itemId": "SERVICE_ITEM_ID",
+            "description": "Part number or description",
+            "quantity": 1,
+            "cost": "0.00",
+            "salesTaxCodeId": "90000-1284388831"
+          }
+        ]
+      }
+    }
+  },
+
+  "warnings": [
+    "NEVER create a bill without a vendor dataPattern file (auto-enforced - throws NO_VENDOR_PATTERN)",
+    "NEVER use payment terms from vendor invoices - always use NET 30 EOM",
+    "NEVER use 'Job Type:Manufacturing Job' for vendor POs/bills - it's customer-only",
+    "NEVER create a bill without checking for duplicates first (auto-enforced - throws DUPLICATE_BILL)",
+    "ALWAYS link to existing PO when creating a bill if PO exists",
+    "ALWAYS verify transaction IDs are in correct GUID format before API calls",
+    "PO links cannot be added after bill creation - must be done at creation time"
+  ]
+}

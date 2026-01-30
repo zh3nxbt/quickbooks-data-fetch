@@ -1,0 +1,114 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "YYYY-MM-DD",
+    "notes": "Brief description of vendor and what they provide"
+  },
+
+  "vendor": {
+    "id": "VENDOR_ID",
+    "name": "Vendor Name",
+    "email": "email@example.com",
+    "phone": "000-000-0000",
+    "address": {
+      "line1": "",
+      "line2": "",
+      "city": "",
+      "state": "",
+      "postalCode": ""
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "purchase_order | verbal",
+    "note": "Typical ordering method - but ALWAYS check for PO before creating bill regardless"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "TERMS_ID",
+      "name": "Term Name (e.g., NET 30 EOM)"
+    },
+    "salesTaxCode": {
+      "id": "TAX_CODE_ID",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "_comment": "List items/accounts commonly used with this vendor",
+    "primary": {
+      "id": "ITEM_OR_ACCOUNT_ID",
+      "name": "Item/Account Name",
+      "type": "service_item | inventory_item | expense_account",
+      "postsToAccount": "Account name if applicable",
+      "description": "When to use this item",
+      "usage": "Detailed guidance on usage"
+    },
+    "alternatives": [
+      {
+        "id": "ALT_ITEM_ID",
+        "name": "Alternative Item Name",
+        "usage": "When to use this instead of primary"
+      }
+    ]
+  },
+
+  "billPattern": {
+    "description": "How bills are typically structured",
+    "preferredMethod": "itemLines | expenseLines",
+    "notes": [
+      "Important notes about bill creation"
+    ],
+    "template": {
+      "_comment": "Template structure - replace placeholders with actual values",
+      "vendor": { "id": "VENDOR_ID" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "TERMS_ID" },
+      "memo": "Optional memo",
+      "itemLines": [],
+      "expenseLines": []
+    },
+    "exampleFromHistory": {
+      "_comment": "Real example from QuickBooks history"
+    }
+  },
+
+  "purchaseOrderPattern": {
+    "description": "How POs are typically structured (if applicable)",
+    "notes": [],
+    "commonPOItem": {
+      "id": "",
+      "name": "",
+      "usage": ""
+    }
+  },
+
+  "variations": {
+    "description": "Known variations or special cases",
+    "cases": [
+      {
+        "scenario": "Description of scenario",
+        "handling": "How to handle it",
+        "notes": "Additional context"
+      }
+    ]
+  },
+
+  "warnings": [
+    "Any important warnings or things to watch out for"
+  ],
+
+  "relatedEntities": {
+    "_comment": "Other vendors/customers that are related or similar",
+    "similar": [],
+    "seeAlso": []
+  }
+}

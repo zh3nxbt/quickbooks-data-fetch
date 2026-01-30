@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "entityType": "vendor",
+    "lastUpdated": "2026-01-29",
+    "dataSource": "QuickBooks vendor record + invoice analysis",
+    "notes": "Sputtek Inc. - Coating and polishing services (TIN coating, PVD coating)"
+  },
+
+  "vendor": {
+    "id": "800003FF-1648830528",
+    "name": "Sputtek",
+    "companyName": "Sputtek Inc.",
+    "email": null,
+    "phone": "416-213-9833",
+    "fax": "905-850-0689",
+    "hstNumber": "897935573",
+    "address": {
+      "line1": "Sputtek Inc.",
+      "line2": "110 Sharer Road",
+      "city": "Vaughan",
+      "state": "ON",
+      "postalCode": "L4L 8P4"
+    }
+  },
+
+  "orderMethod": {
+    "typicalMethod": "verbal",
+    "note": "Usually verbal orders, but always check for PO before creating bill"
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM"
+    },
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST Ontario"
+    },
+    "payablesAccount": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable"
+    }
+  },
+
+  "commonItems": {
+    "primary": {
+      "id": "8000004F-1593097577",
+      "name": "Subcontractor:Coating",
+      "type": "service_item",
+      "postsToAccount": "Subcontractor",
+      "usage": "Coating and polishing services (TIN, PVD, etc.)"
+    },
+    "alternatives": []
+  },
+
+  "billPattern": {
+    "description": "How bills are typically structured for Sputtek",
+    "preferredMethod": "itemLines",
+    "notes": [
+      "Use Subcontractor:Coating for coating/polishing services",
+      "Description includes item details and service (e.g., 'Set of 6 Die Sections - Polishing and Coating')",
+      "Usually verbal orders - no formal PO",
+      "Always use NET 30 EOM terms (ignore their '2% 15 NET 31')"
+    ],
+    "template": {
+      "vendor": { "id": "800003FF-1648830528" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "VENDOR_INVOICE_NUMBER",
+      "terms": { "id": "80000008-1592232388" },
+      "itemLines": [
+        {
+          "item": { "id": "8000004F-1593097577" },
+          "description": "Item description - coating/polishing service",
+          "quantity": 1,
+          "rate": "0.00",
+          "salesTaxCode": { "id": "90000-1284388831" }
+        }
+      ]
+    }
+  },
+
+  "purchaseOrderPattern": {
+    "description": "POs are usually VERBAL - no formal PO created",
+    "notes": [
+      "Most orders are verbal/phone orders",
+      "If PO needed, use Subcontractor:Coating"
+    ]
+  },
+
+  "warnings": [
+    "DO NOT use 'Job Type:Manufacturing Job' - that's for customer invoices only",
+    "Always use 'Subcontractor:Coating' for this vendor",
+    "Ignore their '2% 15 NET 31' terms - use NET 30 EOM per business rules"
+  ]
+}

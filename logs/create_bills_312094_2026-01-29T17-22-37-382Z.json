@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-01-29T17:22:37.382Z",
+  "action": "create",
+  "entity": "bills",
+  "endpoint": "POST /quickbooks-desktop/bills",
+  "request": {
+    "vendorId": "800002F2-1498582191",
+    "transactionDate": "2026-01-27",
+    "refNumber": "312094",
+    "termsId": "80000008-1592232388",
+    "linkToTransactionIds": [
+      "3B98F-1769453388"
+    ]
+  },
+  "response": {
+    "error": {
+      "error": {
+        "message": "QBD Request Error (3180): There was an error when saving a Bill.  QuickBooks error message: The transaction is empty.",
+        "userFacingMessage": "An error occurred while communicating with QuickBooks Desktop: There was an error when saving a Bill.  QuickBooks error message: The transaction is empty.",
+        "type": "INTEGRATION_ERROR",
+        "code": "QBD_REQUEST_ERROR",
+        "httpStatusCode": 502,
+        "integrationCode": "3180",
+        "requestId": "req_VTpV0nEn6but0O"
+      }
+    }
+  },
+  "status": "error",
+  "refNumber": "312094",
+  "linkedEntities": [
+    {
+      "type": "linked_transaction",
+      "id": "3B98F-1769453388"
+    }
+  ]
+}

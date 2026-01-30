@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "entityType": "customer",
+    "lastUpdated": "YYYY-MM-DD",
+    "notes": "Brief description of customer and typical work performed for them"
+  },
+
+  "customer": {
+    "id": "CUSTOMER_ID",
+    "name": "Customer Name",
+    "email": "email@example.com",
+    "phone": "000-000-0000",
+    "address": {
+      "line1": "",
+      "line2": "",
+      "city": "",
+      "state": "",
+      "postalCode": ""
+    }
+  },
+
+  "defaults": {
+    "terms": {
+      "id": "TERMS_ID",
+      "name": "Term Name"
+    },
+    "salesTaxCode": {
+      "id": "TAX_CODE_ID",
+      "name": "H",
+      "rate": "13%"
+    },
+    "receivablesAccount": {
+      "id": "ACCOUNT_ID",
+      "name": "Accounts Receivable"
+    }
+  },
+
+  "commonItems": {
+    "_comment": "Items typically invoiced to this customer",
+    "primary": {
+      "id": "ITEM_ID",
+      "name": "Item Name",
+      "type": "service_item | inventory_item",
+      "description": "When to use this item",
+      "usage": "Detailed guidance"
+    },
+    "alternatives": []
+  },
+
+  "invoicePattern": {
+    "description": "How invoices are typically structured",
+    "notes": [],
+    "template": {
+      "customer": { "id": "CUSTOMER_ID" },
+      "transactionDate": "YYYY-MM-DD",
+      "refNumber": "INVOICE_NUMBER",
+      "terms": { "id": "TERMS_ID" },
+      "memo": "",
+      "lineItems": []
+    },
+    "exampleFromHistory": {}
+  },
+
+  "salesOrderPattern": {
+    "description": "How sales orders are structured (if applicable)",
+    "notes": []
+  },
+
+  "variations": {
+    "description": "Known variations or special cases",
+    "cases": []
+  },
+
+  "warnings": [],
+
+  "jobsAndProjects": {
+    "_comment": "If customer has sub-jobs or projects, list patterns here",
+    "hasSubJobs": false,
+    "namingConvention": "",
+    "examples": []
+  }
+}

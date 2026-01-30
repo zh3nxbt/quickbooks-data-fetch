@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "description": "Common QuickBooks IDs and references used across all vendors/customers",
+    "lastUpdated": "2026-01-29",
+    "notes": "These IDs are specific to MAS Precision Parts QuickBooks file"
+  },
+
+  "taxCodes": {
+    "H": {
+      "id": "90000-1284388831",
+      "name": "H",
+      "rate": "13%",
+      "description": "HST - Ontario Harmonized Sales Tax",
+      "usage": "Standard tax code for Ontario transactions"
+    }
+  },
+
+  "paymentTerms": {
+    "NET_30_EOM": {
+      "id": "80000008-1592232388",
+      "name": "NET 30 EOM",
+      "description": "Net 30 days, End of Month"
+    },
+    "NET_30": {
+      "id": "20000-929672146",
+      "name": "Net 30",
+      "description": "Net 30 days from invoice date"
+    }
+  },
+
+  "accounts": {
+    "accountsPayable": {
+      "id": "800000A7-1484673346",
+      "name": "Accounts Payable",
+      "type": "accounts_payable"
+    },
+    "subcontractor": {
+      "id": "5C0000-929672146",
+      "name": "Subcontractor",
+      "type": "cost_of_goods_sold",
+      "accountNumber": "5030"
+    }
+  },
+
+  "serviceItems": {
+    "_comment": "Subcontractor service items for different types of work",
+    "subcontractor": {
+      "id": "80000038-1587407706",
+      "name": "Subcontractor",
+      "postsTo": "Subcontractor"
+    },
+    "waterjetCutting": {
+      "id": "80000042-1592233560",
+      "name": "Subcontractor:Waterjet Cutting",
+      "postsTo": "Subcontractor"
+    },
+    "generalMachining": {
+      "id": "80000050-1593098471",
+      "name": "Subcontractor:General Machining",
+      "postsTo": "Subcontractor"
+    },
+    "grinding": {
+      "id": "8000003A-1587408189",
+      "name": "Subcontractor:Grinding",
+      "postsTo": "Subcontractor"
+    },
+    "heatTreating": {
+      "id": "80000039-1587407737",
+      "name": "Subcontractor:Heat Treating",
+      "postsTo": "Subcontractor"
+    },
+    "coating": {
+      "id": "8000004F-1593097577",
+      "name": "Subcontractor:Coating",
+      "postsTo": "Subcontractor"
+    },
+    "welding": {
+      "id": "80000052-1593106414",
+      "name": "Subcontractor:Welding",
+      "postsTo": "Subcontractor"
+    },
+    "wireAndSinkerEDM": {
+      "id": "8000003C-1587408250",
+      "name": "Subcontractor:Wire & Sinker EDM",
+      "postsTo": "Subcontractor"
+    },
+    "cncProgramming": {
+      "id": "80000057-1594659417",
+      "name": "Subcontractor:CNC Programming",
+      "postsTo": "Subcontractor"
+    },
+    "engineeringDesign": {
+      "id": "80000053-1593106440",
+      "name": "Subcontractor:Engineering Design",
+      "postsTo": "Subcontractor"
+    },
+    "generalLabour": {
+      "id": "8000005A-1607538831",
+      "name": "Subcontractor:General Labour",
+      "postsTo": "Subcontractor"
+    },
+    "hardAnodizing": {
+      "id": "80000059-1607116498",
+      "name": "Subcontractor:Hard Anodizing",
+      "postsTo": "Subcontractor"
+    },
+    "turning": {
+      "id": "8000003B-1587408201",
+      "name": "Subcontractor:Turning",
+      "postsTo": "Subcontractor"
+    }
+  },
+
+  "materialItems": {
+    "_comment": "Items for materials, components, and supplies (not subcontractor services)",
+    "fastener": {
+      "id": "80000049-1592400071",
+      "name": "Components:Fastener",
+      "postsTo": "Components",
+      "usage": "Bolts, screws, nuts, washers, socket caps"
+    },
+    "toolsEquipment": {
+      "id": "80000066-1715615671",
+      "name": "Tools & Equipment",
+      "postsTo": "Tools & Equipment",
+      "usage": "Drill bits, taps, dies, measuring tools"
+    },
+    "rawMaterials": {
+      "id": "8000003D-1587408478",
+      "name": "Raw Materials",
+      "postsTo": "Raw Materials",
+      "usage": "Metal stock, bars, plates, sheets"
+    },
+    "generalMaterial": {
+      "id": "80000055-1593447707",
+      "name": "Components:General Material",
+      "postsTo": "Components",
+      "usage": "General components that don't fit other categories"
+    }
+  },
+
+  "purchaseOrderItems": {
+    "manufacturingJob": {
+      "id": "80000045-1592235033",
+      "name": "Job Type:Manufacturing Job",
+      "usage": "Generic PO line item - specifics go in description field"
+    },
+    "hstOnPurchase": {
+      "id": "D0000-1312469932",
+      "name": "HST On Purchase",
+      "usage": "Auto-added tax line on POs"
+    }
+  },
+
+  "taxAgencies": {
+    "receiverGeneral": {
+      "id": "10000-929672146",
+      "name": "Receiver General",
+      "usage": "Federal tax remittance (HST/GST)"
+    },
+    "ministerOfFinance": {
+      "id": "25C0000-1312469931",
+      "name": "Minister of Finance",
+      "usage": "Provincial tax (PST) - usually 0% in Ontario"
+    }
+  },
+
+  "companyInfo": {
+    "name": "M.A.S. PRECISION PARTS LTD.",
+    "address": {
+      "line1": "M.A.S. PRECISION PARTS LTD.",
+      "line2": "418 HANLAN ROAD, UNIT 24",
+      "city": "WOODBRIDGE",
+      "state": "ON",
+      "postalCode": "L4L 4Z1"
+    }
+  },
+
+  "guidelines": {
+    "choosingServiceItem": [
+      "Match the service item to the type of work performed",
+      "Waterjet Cutting = waterjet/laser cutting services",
+      "General Machining = CNC milling, general machining",
+      "Grinding = surface grinding, cylindrical grinding",
+      "Heat Treating = hardening, tempering, stress relieving",
+      "Coating = plating, painting, powder coating",
+      "When in doubt, use 'Subcontractor' (parent item) with detailed description"
+    ],
+    "taxCodeSelection": [
+      "Use 'H' (HST) for all Ontario vendors",
+      "Verify tax code for out-of-province vendors",
+      "Some services may be tax-exempt - verify before posting"
+    ]
+  }
+}

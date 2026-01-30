@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-01-29T17:51:22.119Z",
+  "action": "create",
+  "entity": "vendors",
+  "endpoint": "POST /quickbooks-desktop/vendors",
+  "request": {
+    "name": "T.N.T. Tools Inc.",
+    "companyName": "T.N.T. TOOLS 2025 INC.",
+    "phone": "416-398-9446",
+    "email": "t.n.t.toolsinc@gmail.com",
+    "address": {
+      "line1": "150 Jardin Drive, Unit #4",
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K-3P9",
+      "country": "Canada"
+    },
+    "termsId": "80000008-1592232388"
+  },
+  "response": {
+    "error": {
+      "error": {
+        "message": "Invalid request parameter: Unrecognized key(s) in object: 'address'",
+        "userFacingMessage": "An internal server error occurred. Please try again.",
+        "type": "INVALID_REQUEST_ERROR",
+        "code": "INVALID_PARAMETERS",
+        "httpStatusCode": 400,
+        "requestId": "req_z2mAzQx6evtH0h"
+      }
+    }
+  },
+  "status": "error",
+  "refNumber": null,
+  "linkedEntities": []
+}

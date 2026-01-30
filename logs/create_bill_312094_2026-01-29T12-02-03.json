@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-01-29T12:02:03-05:00",
+  "action": "create",
+  "entity": "bill",
+  "endpoint": "POST /quickbooks-desktop/bills",
+  "request": {
+    "vendorId": "800002F2-1498582191",
+    "transactionDate": "2026-01-27",
+    "refNumber": "312094",
+    "termsId": "80000008-1592232388",
+    "linkToTransactionIds": ["3B98F-1769453388"]
+  },
+  "response": {
+    "id": "3BC16-1769706123",
+    "objectType": "qbd_bill",
+    "createdAt": "2026-01-29T12:02:03-05:00",
+    "vendor": {
+      "id": "800002F2-1498582191",
+      "fullName": "Valk's Machinery Ltd."
+    },
+    "transactionDate": "2026-01-27",
+    "dueDate": "2026-02-28",
+    "amountDue": "113.00",
+    "refNumber": "312094",
+    "terms": {
+      "id": "80000008-1592232388",
+      "fullName": "NET 30 EOM"
+    },
+    "linkedTransactions": [
+      {
+        "id": "3B98F-1769453388",
+        "transactionType": "purchase_order",
+        "refNumber": "1050"
+      }
+    ],
+    "itemLines": [
+      {
+        "item": { "fullName": "Subcontractor:Waterjet Cutting" },
+        "description": "44221-0290-",
+        "quantity": 2,
+        "cost": "25.00",
+        "amount": "50.00"
+      },
+      {
+        "item": { "fullName": "Subcontractor:Waterjet Cutting" },
+        "description": "44221-0290-03_01",
+        "quantity": 2,
+        "cost": "25.00",
+        "amount": "50.00"
+      }
+    ]
+  },
+  "status": "success",
+  "refNumber": "312094",
+  "linkedEntities": [
+    {
+      "type": "purchase_order",
+      "id": "3B98F-1769453388",
+      "refNumber": "1050"
+    }
+  ],
+  "notes": "Bill created from Valk's Machinery Invoice #312094, linked to PO #1050. Line items auto-populated from PO."
+}

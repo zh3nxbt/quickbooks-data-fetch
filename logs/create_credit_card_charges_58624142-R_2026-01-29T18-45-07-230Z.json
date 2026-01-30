@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-01-29T18:45:07.230Z",
+  "action": "create",
+  "entity": "credit_card_charges",
+  "endpoint": "POST /quickbooks-desktop/credit-card-charges",
+  "request": {
+    "accountId": "800000AC-1492352573",
+    "payeeId": "800002F8-1501163027",
+    "transactionDate": "2026-01-23",
+    "refNumber": "58624142-R",
+    "itemLines": [
+      {
+        "itemId": "80000049-1592400071",
+        "description": "91732A782 - SS Helical Insert, M6 x 1, 12mm Long, Pk of 10",
+        "quantity": 1,
+        "amount": "6.28",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000049-1592400071",
+        "description": "91595A845 - Dowel Pin, 52100 Alloy Steel, 16mm Dia, 40mm Long (x2)",
+        "quantity": 1,
+        "amount": "12.99",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000049-1592400071",
+        "description": "97355A504 - Pull-Out Dowel Pin, Spring Steel, 10mm Dia, 32mm Long (x2)",
+        "quantity": 1,
+        "amount": "8.23",
+        "salesTaxCodeId": "90000-1284388831"
+      },
+      {
+        "itemId": "80000065-1715614932",
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "amount": "19.38",
+        "salesTaxCodeId": "90000-1284388831"
+      }
+    ]
+  },
+  "response": {
+    "id": "3BCE0-1769712306",
+    "objectType": "qbd_credit_card_charge",
+    "createdAt": "2026-01-29T13:45:06-05:00",
+    "updatedAt": "2026-01-29T13:45:06-05:00",
+    "revisionNumber": "1769712306",
+    "account": {
+      "id": "800000AC-1492352573",
+      "fullName": "TD VISA #5625"
+    },
+    "payee": {
+      "id": "800002F8-1501163027",
+      "fullName": "McMaster-Carr"
+    },
+    "transactionDate": "2026-01-23",
+    "amount": "52.97",
+    "currency": null,
+    "exchangeRate": null,
+    "amountInHomeCurrency": null,
+    "refNumber": "58624142-R",
+    "memo": null,
+    "salesTaxCode": {
+      "id": "90000-1284388831",
+      "fullName": "H"
+    },
+    "externalId": null,
+    "expenseLines": [],
+    "itemLines": [
+      {
+        "id": "3BCE2-1769712306",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000049-1592400071",
+          "fullName": "Components:Fastener"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "91732A782 - SS Helical Insert, M6 x 1, 12mm Long, Pk of 10",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "6.28",
+        "amount": "6.28",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCE3-1769712306",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000049-1592400071",
+          "fullName": "Components:Fastener"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "91595A845 - Dowel Pin, 52100 Alloy Steel, 16mm Dia, 40mm Long (x2)",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "12.99",
+        "amount": "12.99",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCE4-1769712306",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000049-1592400071",
+          "fullName": "Components:Fastener"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "97355A504 - Pull-Out Dowel Pin, Spring Steel, 10mm Dia, 32mm Long (x2)",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "8.23",
+        "amount": "8.23",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      },
+      {
+        "id": "3BCE5-1769712306",
+        "objectType": "qbd_item_line",
+        "item": {
+          "id": "80000065-1715614932",
+          "fullName": "Shipping & Delivery"
+        },
+        "inventorySite": null,
+        "inventorySiteLocation": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "expirationDate": null,
+        "description": "Shipping (Purolator)",
+        "quantity": 1,
+        "unitOfMeasure": null,
+        "overrideUnitOfMeasureSet": null,
+        "cost": "19.38",
+        "amount": "19.38",
+        "customer": null,
+        "class": null,
+        "salesTaxCode": {
+          "id": "90000-1284388831",
+          "fullName": "H"
+        },
+        "billingStatus": null,
+        "salesRepresentative": null,
+        "customFields": []
+      }
+    ],
+    "itemGroupLines": [],
+    "customFields": []
+  },
+  "status": "success",
+  "refNumber": "58624142-R",
+  "linkedEntities": []
+}

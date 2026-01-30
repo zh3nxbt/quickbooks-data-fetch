@@ -1,0 +1,12 @@
+{
+  "name": "quickbooks-data",
+  "version": "1.0.0",
+  "description": "QuickBooks Desktop integration via Conductor.is",
+  "main": "test-connection.js",
+  "scripts": {
+    "test": "node test-connection.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}

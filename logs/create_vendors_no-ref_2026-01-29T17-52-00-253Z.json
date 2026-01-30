@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-01-29T17:52:00.253Z",
+  "action": "create",
+  "entity": "vendors",
+  "endpoint": "POST /quickbooks-desktop/vendors",
+  "request": {
+    "name": "T.N.T. Tools Inc.",
+    "companyName": "T.N.T. TOOLS 2025 INC.",
+    "phone": "416-398-9446",
+    "email": "t.n.t.toolsinc@gmail.com",
+    "billingAddress": {
+      "line1": "T.N.T. TOOLS 2025 INC.",
+      "line2": "150 Jardin Drive, Unit #4",
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K-3P9"
+    },
+    "termsId": "80000008-1592232388",
+    "taxRegistrationNumber": "766793368"
+  },
+  "response": {
+    "id": "800004F4-1769709119",
+    "objectType": "qbd_vendor",
+    "createdAt": "2026-01-29T12:51:59-05:00",
+    "updatedAt": "2026-01-29T12:51:59-05:00",
+    "revisionNumber": "1769709119",
+    "name": "T.N.T. Tools Inc.",
+    "isActive": true,
+    "class": null,
+    "companyName": "T.N.T. TOOLS 2025 INC.",
+    "salutation": null,
+    "firstName": null,
+    "middleName": null,
+    "lastName": null,
+    "jobTitle": null,
+    "billingAddress": {
+      "line1": "T.N.T. TOOLS 2025 INC.",
+      "line2": "150 Jardin Drive, Unit #4",
+      "line3": null,
+      "line4": null,
+      "line5": null,
+      "city": "Concord",
+      "state": "ON",
+      "postalCode": "L4K-3P9",
+      "country": null,
+      "note": null
+    },
+    "shippingAddress": null,
+    "phone": "416-398-9446",
+    "alternatePhone": null,
+    "fax": null,
+    "email": "t.n.t.toolsinc@gmail.com",
+    "ccEmail": null,
+    "contact": null,
+    "alternateContact": null,
+    "customContactFields": [
+      {
+        "name": "Main Phone",
+        "value": "416-398-9446"
+      },
+      {
+        "name": "Main Email",
+        "value": "t.n.t.toolsinc@gmail.com"
+      }
+    ],
+    "additionalContacts": [],
+    "nameOnCheck": null,
+    "accountNumber": null,
+    "note": null,
+    "additionalNotes": [],
+    "vendorType": null,
+    "terms": {
+      "id": "80000008-1592232388",
+      "fullName": "NET 30 EOM"
+    },
+    "creditLimit": null,
+    "taxIdentificationNumber": null,
+    "isEligibleFor1099": false,
+    "balance": "0.00",
+    "billingRate": null,
+    "externalId": null,
+    "salesTaxCode": null,
+    "salesTaxCountry": "canada",
+    "isSalesTaxAgency": false,
+    "salesTaxReturn": null,
+    "taxRegistrationNumber": null,
+    "reportingPeriod": null,
+    "isTrackingPurchaseTax": null,
+    "purchaseTaxAccount": null,
+    "isTrackingSalesTax": null,
+    "salesTaxAccount": null,
+    "isCompoundingTax": null,
+    "defaultExpenseAccounts": [],
+    "currency": null,
+    "customFields": []
+  },
+  "status": "success",
+  "refNumber": null,
+  "linkedEntities": []
+}
